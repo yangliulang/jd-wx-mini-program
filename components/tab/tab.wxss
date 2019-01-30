@@ -1,0 +1,33 @@
+.tab-nav-scroll{
+  height: 116rpx;
+  width:750rpx;
+  white-space: nowrap;
+  background-color: #fff;
+}
+.tab-nav-item{
+  display: inline-block;
+  width: 25%;
+  height: 116rpx;
+}
+.select-tab{
+  background: -webkit-linear-gradient(left,#e93b3d,#ff9574);
+  color: #fff;
+}
+.tab-nav-item::after{
+  content: "";
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #fff;
+  margin: 8px auto;
+  transform: rotate(45deg);
+}
+.tab-nav-item image{
+  width: 36rpx;
+  height: 36rpx;
+  margin:15rpx auto;
+}
+.tab-nav-item text{
+  text-align: center;
+  display: block;
+}

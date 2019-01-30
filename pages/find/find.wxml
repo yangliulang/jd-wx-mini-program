@@ -1,0 +1,12 @@
+<!--应用模版-->
+<import src="/templates/find-panel/find-panel.wxml"/>
+<!--tab组件调用-->
+<view class='tab-bar'>
+  <TabNav class="{{isTabBarFix?'tab-bar-fix':''}}" tab-item="{{tabNavData}}" current-tab-index="{{currentTabIndex}}" bind:onTabChange="_onTabChange"></TabNav>
+</view>
+<!--调用面板模版-->
+<view class="find-page">
+  <template is="findPanel" data="{{panels}}"/>
+</view>
+<!--活动顶部-->
+<view bindtap='onGoTop' class='go-top' hidden="{{!isTabBarFix}}">w</view>

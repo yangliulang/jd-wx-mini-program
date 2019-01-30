@@ -1,0 +1,12 @@
+
+<view class="header" wx:for="{{[1,2,3,4,5,6]}}">
+  <view class='header-pic'>
+    <image src="{{userInfo.userInfo.avatarUrl}}"/>
+  </view>
+  <view class='user-info'>
+    <text class="name">{{userInfo.userInfo.nickName}}</text>
+    <text class="name-detail">用户名：{{userInfo.userInfo.nickName}}</text>
+  </view>
+</view>
+
+

@@ -1,0 +1,31 @@
+<scroll-view class='category-tab' scroll-y   scroll-top="{{categoryScrollTop}}" scroll-with-animation>
+  <view class="tab-item{{item.id == curTabId?' current':''}}"
+    id="{{item.id}}"
+   data-id="{{item.id}}"
+   wx:for="{{categoryBar}}"
+   wx:key="id"
+   bindtap="onTab"
+  >{{item.name}}</view>
+</scroll-view>
+<scroll-view
+  class="branch-scroll"
+  scroll-y
+  scroll-with-animation
+  scroll-top="{{categoryViewScrollTop}}"
+  bindscroll="onCateViewScroll"
+>
+
+  <!--每一组数据-->
+  <view class="cate-view-item" id="{{item.cid}}" wx:for="{{categoryData}}" wx:key="id">
+    <view class="cate-title">
+      <text class="{{item.cid == scrollFixId?' fix':''}}">{{item.name}}</text>
+    </view>
+    <view class="cate-item">
+      <view class="cate" wx:for="{{item.catelogyList}}" wx:key="name">
+        <image src="{{item.icon}}"/>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+</scroll-view>

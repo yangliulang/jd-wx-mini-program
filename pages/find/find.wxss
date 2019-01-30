@@ -1,0 +1,32 @@
+@import "/templates/find-panel/find-panel.wxss";
+page{
+  background-color: #f7f7f7;
+}
+.tab-bar{
+  height: 116rpx;
+}
+.tab-bar-fix{
+  position: fixed;
+  left: 0;
+  top:0;
+  right: 0;
+}
+.find-page{
+  padding:0 30rpx;
+  margin-top: 24rpx;
+}
+.go-top{
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  border-radius: 5px;
+  bottom: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-color: rgba(0,0,0,0.6);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAFVBMVEUAAAD///////////////////////9Iz20EAAAABnRSTlMAEs64yCwYosRLAAAAf0lEQVQ4y+2LOw6AIBBEMUZrgyegsdY7eACPYCjm/kcQMhsTYLGxwcRp9vPmmdYzIs35RN6n26cKsXAVZYHXJeuxOF1xsKoUvghUVQwi1hSDyDUlkFLiB2wUSiSlxBvs5ApJLskFaaUKSS71skN6602GjRMc82GSkDA/+RhpLBdlCiXsyNDDDQAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:50rpx;
+}
+

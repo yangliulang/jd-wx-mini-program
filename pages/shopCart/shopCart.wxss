@@ -1,0 +1,202 @@
+page {
+  background-color: #f4f4f4;
+  padding-bottom: 90rpx;
+  overflow-x: hidden;
+  width: 750rpx;
+  color: #666;
+}
+
+/*列表*/
+
+.goods-items {
+  background-color: #fff;
+  border-bottom: 1rpx solid #e7e7e8;
+  border-top: 1rpx solid #e7e7e8;
+  margin-bottom: 10rpx;
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.44, 0.9, 0.21, 1.35);
+}
+.goods-items.del{
+  left: -50px;
+} 
+.goods-info {
+  display: flex;
+  height: 190rpx;
+  padding: 20rpx 0;
+}
+
+.goods-info .btn {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-info .btn:after {
+  content: "";
+  width: 40rpx;
+  height: 40rpx;
+  border: 1rpx solid #ddd;
+  border-radius: 50%;
+}
+
+.goods-info .selected:after {
+  background: #ef363e url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAkRfSKQPV3NmeT1MiFJaMSfjgsIJaREEuThZUAAAAf0lEQVQ4y+2QzRpFMAxE07S0XOX6n/d/Uh8LLMosfHbO+iSTiXw8xVju/OGpox4/HoaaOiVCpGGhLYVRo8h4s6CS4DyoOZJhsW/OzYr0pRYm25v5SpK43Yr2+o0uR3OEXVvbrgle5d5ajxvlDmcxGPLGbRc6FUIV1mbUmuXjVRY4XgSCq9dNWAAAAABJRU5ErkJggg==') no-repeat center center;
+  background-size: 40rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.goods-info .pic {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ddd;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.goods-info .pic image {
+  width: 100%;
+}
+
+.goods-info .info {
+  width: 60%;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  padding-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goods-info .info .name {
+  font-size: 24rpx;
+  color: #666;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.goods-info .info .price {
+  color: #ef363e;
+}
+
+.goods-info .info .detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods-info .info .detail .desc {
+  height: 80rpx;
+  line-height: 16rpx;
+}
+
+.num-ctrl {
+  display: flex;
+  width: 50%;
+  border: 1px solid #ddd;
+  height: 50rpx;
+  border-radius: 10rpx;
+}
+
+.num-ctrl>view {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-style: normal;
+}
+
+.num-ctrl view:nth-of-type(2) {
+  width: 50%;
+  border: 1rpx solid #ddd;
+  border-width: 0 1rpx;
+}
+
+.goods-items .del-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100rpx;
+  background-color: #7f7f7f;
+  color: #fff;
+}
+
+/*总计*/
+.total-bar {
+    height: 80rpx;
+    font-size: 28rpx;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: 1rpx solid #e0e0e0;
+    display: flex;
+}
+.total-bar .go-pay{
+	display: block;
+	width: 30%;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #f13337;
+	color: #fff;
+}
+.total-bar .price {
+    width: 70%;
+    box-sizing: border-box;
+    padding-left: 20rpx;
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.total-bar .price .all-select{
+	display: flex;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-weight: bold;
+	margin-right: 10rpx;
+	align-items: center;
+}
+.total-bar .price .all-select:before{
+	content: '';
+	display: inline-block;
+	width: 40rpx;
+	height: 40rpx;
+	border:1rpx solid #e2e2e2;
+	border-radius: 50%;
+	margin-right: 10rpx;
+}
+.total-bar .price .all-select.selected:before{
+  background: #ef363e url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAkRfSKQPV3NmeT1MiFJaMSfjgsIJaREEuThZUAAAAf0lEQVQ4y+2QzRpFMAxE07S0XOX6n/d/Uh8LLMosfHbO+iSTiXw8xVju/OGpox4/HoaaOiVCpGGhLYVRo8h4s6CS4DyoOZJhsW/OzYr0pRYm25v5SpK43Yr2+o0uR3OEXVvbrgle5d5ajxvlDmcxGPLGbRc6FUIV1mbUmuXjVRY4XgSCq9dNWAAAAABJRU5ErkJggg==') no-repeat center center;
+  background-size: 40rpx;
+}
+.total-bar .price .total view{
+	line-height: 120%;
+}
+.total-bar .price .total view:first-child{
+	font-weight: bold;
+}
+
+/*没有购物车数据*/
+.shopcart-empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 750rpx;
+  font-size: 34rpx;
+  color:#999;
+}

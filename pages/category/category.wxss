@@ -1,0 +1,65 @@
+/*分类选项卡*/
+.category-tab{
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  width: 170rpx;
+  background-color:#F8F8F8; 
+}
+.tab-item{
+  height: 92rpx;
+  line-height: 92rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.current{
+  background-color: #fff;
+  color: #E93B3D;
+}
+.branch-scroll{
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  width: 580rpx;
+}
+
+.cate-view-item .cate-title{
+  font-weight: bold;
+  color: #333;
+  height: 50rpx;
+}
+.cate-view-item .cate-title text{
+  display: block;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #F8F8F8;
+  background-color: #fff;
+  text-indent: 20rpx;
+}
+.cate-view-item .cate-title text.fix{
+  position: fixed;
+  top:0;
+  width:580rpx;
+}
+.cate-item{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 14px 20rpx 0;
+  box-sizing: border-box;
+}
+.cate-item .cate{
+  width: 33%;
+}
+.cate-item .cate image{
+  width: 140rpx;
+  height: 140rpx;
+  margin:0 auto;
+}
+.cate-item .cate text{
+  display: block;
+  text-align: center;
+  height: 70rpx;
+  margin-top: 4rpx;
+}

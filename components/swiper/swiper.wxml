@@ -1,0 +1,3 @@
+<view class='swiper-inner' bindtouchstart='_onTouchStart' bindtouchend='_onTouchEnd'>
+  <slot name="goods"/>
+</view>

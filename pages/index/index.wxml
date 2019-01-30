@@ -1,0 +1,232 @@
+<!--搜搜工具条start-->
+<view class="search-bar{{isSetBgColor?' set-background':''}}{{isShowSearchPage?' set-background':''}}">
+  <view class="search-view">
+    <view class='logo-icon'>
+      <image src="/images/icons/logo-icon.png" />
+    </view>
+    <view class='search-form'>
+      <icon type='search' size='15'></icon>
+      <input bindfocus='onSearch' bindconfirm='onSearchConfirm' type='text' placeholder='好奇超级新品日，满减活动开始啦' />
+    </view>
+  </view>
+  <view class="person-icon">
+    <image src="/images/icons/person-icon.png" />
+  </view>
+</view>
+<!--搜搜工具条end-->
+<!--搜索页面start-->
+<view class='search-page' wx:if="{{isShowSearchPage}}">
+  <text>没有搜索记录</text>
+</view>
+<!--搜索页面end-->
+<view class="page">
+  <!--焦点图滑动区域-->
+  <view class="slider-view">
+    <swiper 
+    bindtap='onGoDetailPage' 
+    class='swiper-view' 
+    duration="300" 
+    circular 
+    autoplay="{{isAutoPlay}}" 
+    bindchange="onSwiperChange" 
+    current="{{currentIndex}}"
+    >
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image id="{{item.id}}" src='{{item.pic}}' />
+      </swiper-item>
+    </swiper>
+    <!--滑块指示点-->
+    <view class="swiper-dots" wx:if="{{banners.length>1}}">
+      <view wx:for="{{banners}}" wx:key="id" class="{{index==currentIndex?'current':''}}" />
+    </view>
+  </view>
+  <!--快速入口start-->
+  <view class="quick-entry">
+    <view class='quick-entry-nav'>
+      <block wx:for="{{quickEntrys}}" wx:key="icon">
+        <view>
+          <image src="{{item.icon}}" />
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+    <!--banner-->
+    <view class="entry-banner">
+      <image src="/images/banners/1.jpg" />
+    </view>
+    <!--banner-->
+  </view>
+  <!--快速入口end-->
+  <!--快速入口start-->
+  <view class='scroll-news'>
+    <view class='news-title'>
+      <image src='/images/icons/jd-news-tit.png' />
+    </view>
+    <view class='news-list'>
+      <view class="news-content{{isTransition?' transition':''}}" bindtransitionend="onTransitionEnd" style="margin-top:{{-newsScrollTop}}px;">
+        <view class='news-item' wx:for="{{scrollNews}}" wx:key="{{index}}">
+          <text class='hot'>热</text>
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='more'>更多</view>
+  </view>
+  <!--快速入口end-->
+  <!--秒杀start-->
+  <view class="seckill">
+    <view class='seckill-title'>
+      <view class='seckill-left'>
+        <text class="seckill-name">京东秒杀</text>
+        <text class="seckill-now">14点场</text>
+        <view class='seckill-timer'>
+          <text>01</text>:
+          <text>11</text>:
+          <text>58</text>
+        </view>
+      </view>
+      <view class='seckill-right'>
+        京东轮番秒
+        <image src="/images/icons/arrow_rt.png" />
+      </view>
+    </view>
+    <scroll-view class="seckill-scroll" scroll-x>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>219</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀1.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>439</view>
+        <view class='seckill-old-price'>￥134</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀2.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>59</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀3.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>654</view>
+        <view class='seckill-old-price'>￥167</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀4.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>675</view>
+        <view class='seckill-old-price'>￥239</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀1.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>234</view>
+        <view class='seckill-old-price'>￥5679</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>1559</view>
+        <view class='seckill-old-price'>￥139</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀1.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>5675</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀2.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>23</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀3.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>119</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀4.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>119</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+      <view class="seckill-item">
+        <image src="/images/goods/秒杀1.jpg" />
+        <view class='seckill-new-price'>
+          <text>￥</text>119</view>
+        <view class='seckill-old-price'>￥159</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!--秒杀end-->
+  <!--品牌start-->
+  <view class="brands">
+    <view class="brand-item">
+      <text class="brand-name">白条商城</text>
+      <text class="brand-tips">低价疯抢中~</text>
+      <image src="/images/goods/品牌1.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">品牌秒杀</text>
+      <text class="brand-tips">低价抢大牌</text>
+      <image src="/images/goods/品牌2.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">闪购</text>
+      <text class="brand-tips">低至8.91折</text>
+      <image src="/images/goods/品牌3.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">拍拍二手车</text>
+      <text class="brand-tips">大牌包5折起</text>
+      <image src="/images/goods/品牌4.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">排行榜</text>
+      <text class="brand-tips">专属购物指南</text>
+      <image src="/images/goods/品牌5.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">发现好货</text>
+      <text class="brand-tips">发现品质生活</text>
+      <image src="/images/goods/品牌6.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">新品首发</text>
+      <text class="brand-tips">现代骑士</text>
+      <image src="/images/goods/品牌7.jpg" />
+    </view>
+    <view class="brand-item">
+      <text class="brand-name">白条商城</text>
+      <text class="brand-tips">低价疯抢中</text>
+      <image src="/images/goods/品牌8.jpg" />
+    </view>
+  </view>
+  <!--品牌end-->
+  <!--商品列表start-->
+  <view class='goods-list'>
+    <view class='title-line'>
+      <text>为你推荐</text>
+    </view>
+    <view class='goods-wrap'>
+      <view class='goods' wx:for="{{goodsList}}" wx:key="*this">
+        <image src="{{item.img}}" />
+        <text class="name">{{item.name}}</text>
+        <text class="price">{{item.price}}</text>
+        <view class='praise-info'>
+          <text>好评率{{item.praise}}%</text>
+          <text>看相似</text>
+        </view>
+      </view>
+    </view>
+    <view class="page-limit">已经是最后一页</view>
+  </view>
+  <!--商品列表end-->
+</view>

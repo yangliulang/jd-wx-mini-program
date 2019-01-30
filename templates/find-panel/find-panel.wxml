@@ -1,0 +1,29 @@
+<template name="findPanel">
+  <block wx:for="{{panels}}">
+    <view wx:if="{{item.type == 'one'}}" class="find-panel-one">
+      <text class='name'>{{item.name}}</text>
+      <image class='img' mode="aspectFill" src="{{item.pic}}" />
+      <view class='detail'>
+        <view>
+          <image src='{{item.userIcon}}' class='icon' />{{item.userName}}
+        </view>
+        <text>{{item.userNum}}</text>
+      </view>
+    </view>
+
+    <view wx:else class="find-page-tow">
+      <view class='left'>
+        <text class='name'>{{item.name}}</text>
+        <view class='detail'>
+          <view>
+            <image src='{{item.userIcon}}' class='icon' />{{item.userName}}
+          </view>
+          <text>{{item.userNum}}</text>
+        </view>
+      </view>
+      <view class='right'>
+        <image src='{{item.pic}}' />
+      </view>
+    </view>
+  </block>
+</template>

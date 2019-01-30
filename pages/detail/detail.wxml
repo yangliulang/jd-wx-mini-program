@@ -1,0 +1,93 @@
+
+<!--商品 详情 评价 tab-->
+<view class='header-tabbar'>
+  <view class='back'>
+    <view class='back-arrow' bindtap='onGoBack'></view>
+  </view>
+  <view class='items' bindtap='onSelectInfo'>
+    <text class="{{selectInfo=='goods-swiper'?'selected':''}}" data-id="goods-swiper">商品</text>
+    <text class="{{selectInfo=='goods-detail'?'selected':''}}" data-id="goods-detail">详情</text>
+    <text class="{{selectInfo=='goods-comment'?'selected':''}}" data-id="goods-comment">评价</text>
+  </view>
+  <view class='home-menus'>
+    <view class='home-icon' bindtap='onGoHome'>
+      <image src='/images/icons/home-icon.png' />
+    </view>
+    <view class='menus'>
+      <image class='more-menu' src="/images/icons/shortcut-nav.png" />
+    </view>
+  </view>
+</view>
+
+<!--商品图片-->
+<view id="js-goods-swiper" class='slide'>
+  <swiper bindchange="onSwiperChange" bindtap="onShowSwiperPic">
+    <swiper-item wx:for="{{goodsPics}}" wx:key="item">
+      <image data-src="{{item}}" src='{{item}}' />
+    </swiper-item>
+  </swiper>
+  <text class='pic-index'>{{curBannerIndex}}/{{goodsPics.length}}</text>
+</view>
+<!--商品名称-->
+<view class='goods-title-wrap'>
+  <view class='title-love'>
+    <text class='title'>阿芙（AFU） AFU阿芙薰衣草茶树精油套装 控油祛痘印 安神助眠 收缩毛孔  香薰芳疗</text>
+    <view bindtap='onLove' class='love{{isLove?" selected":""}}'>
+      <view class='love-icon'></view>
+      关注
+    </view>
+  </view>
+  <view class='price-info'>
+    <view class='price'>
+      <text>￥</text>
+      <text>209</text>
+      <text>.00</text>
+    </view>
+    <view class='inform' bindtap='onInformMe'>降价通知</view>
+  </view>
+</view>
+<!--商品选项-->
+<view class='goods-options' bindtap='onSelectNum'>
+  <label>已选</label>
+  <view class='option-info'>
+    {{selectNum}}件
+  </view>
+</view>
+<view class='goods-options' bindtap='onSelectAddress'>
+  <label>地址</label>
+  <view class='option-info'>
+    {{address.cityName}}  {{address.countyName}}  {{address.detailInfo}}
+  </view>
+</view>
+<!--商品图片预览-->
+<view id="js-goods-detail" class='pics'>
+  <image mode='widthFix' src="https://img10.360buyimg.com/popWareDetail/jfs/t2035/229/1550972484/94135/c43d8145/566a41b0Nd2b15e10.jpg" />
+  <image mode='widthFix' src="https://img10.360buyimg.com/popWareDetail/jfs/t2035/229/1550972484/94135/c43d8145/566a41b0Nd2b15e10.jpg" />
+</view>
+<!--商品评论start-->
+<view id="js-goods-comment" class='comment'>
+  商品评论区
+</view>
+<!--商品评论end-->
+<!--购物车-->
+<view class='cart-bar'>
+  <view class='cart-bar-left'>
+    <view>
+      <view class='icon icon-1'></view>
+      卖家
+    </view>
+    <view>
+      <view class='icon icon-2'></view>
+      进店
+    </view>
+    <view class="shop-cart">
+      <text wx:if="{{shopCartNum}}">{{shopCartNum}}</text>
+      <view class='icon icon-3'></view>
+      购物车
+    </view>
+  </view>
+  <view class='action-list'>
+    <view bindtap="onAddShopCart">加入购物车</view>
+    <view bindtap="onGoShopCart">立即购买</view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<!--自顶一个swiper组件-->
+<block wx:for="{{items}}" wx:key="item">
+  <swiperCart swiper-width="100" bind:swiperRight="onSwiperRight" bind:swiperLeft="onSwiperLeft" data-goods-id="{{item.id}}">
+    <view slot="goods" class="goods-items{{item.edit?' del':''}}">
+        <view class='goods-info'>
+          <view class='btn{{item.checked?" selected":""}}' bindtap='onSelectCurrent' data-goods-id="{{item.id}}"></view>
+          <view class='pic'>
+            <image mode="aspectFit" src="{{item.pic}}"></image>
+          </view>
+          <view class='info'>
+            <text class='name'>{{item.name}}</text>
+            <text class='price'>￥{{item.price}}</text>
+            <view class='detail'>
+              <text class='desc'>
+                赠送积分:0.0\n
+                消费金币:0.0
+              </text>
+              <view class="num-ctrl">
+                <view class="reduce" bindtap='onReduce' data-goods-id="{{item.id}}">-</view>
+                <view>{{item.num}}</view>
+                <view class="add" bindtap='onAdd' data-goods-id="{{item.id}}">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="del-bar" bindtap='onDelGoods' data-goods-id="{{item.id}}">
+          删除
+        </view>
+      </view>
+  </swiperCart>
+</block>
+<!--购物车为空-->
+<view class="shopcart-empty" wx:if="{{!items.length}}">
+  购物车没有数据
+</view>
+<!--购物车统计结算-->
+<view class="total-bar">
+    <view class="price">
+        <view class="all-select{{isAllSelect?' selected':''}}" bindtap='onSelectAll'>全选</view>
+        <view class="total">
+            <view>合计：￥{{totalPrice}}</view>
+            <view>总计：￥{{totalPrice}}</view>
+        </view>
+    </view>
+    <view class="go-pay" bindtap='onPay'>
+        去结算({{totalNum}})
+    </view>
+</view>

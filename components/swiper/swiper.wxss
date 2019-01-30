@@ -1,0 +1,4 @@
+.swiper-inner{
+  width: 750rpx;
+  overflow-x: hidden;
+}

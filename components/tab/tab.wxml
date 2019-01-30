@@ -1,0 +1,16 @@
+<scroll-view class='tab-nav-scroll'
+  scroll-x
+  scroll-left="{{selectTabLeft}}"
+  scroll-with-animation
+>
+  <view id="tab-nav-{{index}}" class="tab-nav-item{{currentTabIndex == index?' select-tab':''}}"
+   wx:for="{{tabItem}}" 
+   data-index="{{index}}"
+   catchtap="onSelectTab"
+   wx:key="index"
+   >
+    <image wx:if="{{currentTabIndex != index}}" src="{{item.icon}}"/>
+    <image wx:else src="{{item.iconSelected}}"/>
+    <text>{{item.name}}</text>
+  </view>
+</scroll-view>
